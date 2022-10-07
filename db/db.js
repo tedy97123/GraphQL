@@ -1,3 +1,6 @@
+const { ApolloServerPluginLandingPageDisabled } = require("apollo-server-core");
+const { assertValidSDL } = require("graphql/validation/validate");
+
 //forign id added as category id to relate the products data to catagory data. Gave each product category id to group products by  which category they belong too.
 const products = [
     {
