@@ -1,12 +1,6 @@
-const {ApolloServer, gql} = require("apollo-server");
-
-//scalerTypes:String, Int, 4(float), Boolean, 
-const typeDefs = gql`
-    type Query {
-        hello: [String!]!
-    }
-`;
-
+const {ApolloServer} = require("apollo-server");
+const {typeDefs} = require ("../schema/schema");
+ 
 const resolvers = {
     Query:{
         hello: () => {

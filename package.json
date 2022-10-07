@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1" ,
-    "devA": "nodemon Arrays" ,
-    "devS": "nodemon Scalers" ,
-    "devO": "nodemon Objects" 
+    "devA": "nodemon JS/Arrays" ,
+    "devS": "nodemon JS/Scalers" ,
+    "devO": "nodemon JS/Objects",
+    "devR":"nodemon JS/RelatingData" 
   },
   "keywords": [],
   "author": "",
