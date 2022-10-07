@@ -26,4 +26,13 @@ exports.typeDefs = gql`
         name : String!
         products : [ Product !] !
     }
+
+    type Reviews{
+        id: String!
+      date: Date!
+      title: String!
+      comment: String!
+      rating: Int!
+      productId: Int!
+    }
 `;
