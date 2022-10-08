@@ -3,9 +3,10 @@ const {typeDefs} = require ("../schema/schema");
 const {Query } = require("../resolvers/Query")
 const {Category } = require("../resolvers/Category")
 const {Product } = require("../resolvers/Product")
-const { categories,products} = require("../db/db")
  
-   
+const { categories,products, reviews} = require("../db/db")
+ 
+
  
 /* need to specifiy type, def and resolvers as arguments in new apolloServer */
 const server = new ApolloServer({
@@ -16,7 +17,9 @@ const server = new ApolloServer({
         Category
       },
       context: {
-        categories,products
+        categories,
+        products,
+        reviews
       }
     
     }
