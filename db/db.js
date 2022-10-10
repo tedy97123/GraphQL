@@ -38,7 +38,7 @@ const products = [
       name: "Shovel",
       description: "Grey rounded shovel for digging",
       quantity: 753,
-      price: 332,
+      price: 332.00,
       image: "img-4",
       onSale: false,
       categoryId: "34115aac-0ff5-4859-8f43-10e8db23602b"
