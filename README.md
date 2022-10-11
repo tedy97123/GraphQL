@@ -1,6 +1,6 @@
 # GraphQL
 
-                         ![index](https://user-images.githubusercontent.com/91521891/195148377-8d4450e4-4d90-4460-94f2-a28230cf67ea.png)
+   ![index](https://user-images.githubusercontent.com/91521891/195148377-8d4450e4-4d90-4460-94f2-a28230cf67ea.png)
 
 What is GraphQL?
 
