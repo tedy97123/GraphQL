@@ -8,10 +8,10 @@ exports.Query =
     //{filter} arg: gives acess to check state on onSale field given the choosen product. reffer to ProductfilterInput in schema.
     // avgRating /onSale resolvers. ( ln21 - ln27 ) -  filers onSale products and the products average rating.
 
-    products:(parent,{filter},{products}) => 
+    products:(parent,{filter},{db}) => 
 
     {
-        let filteredProducts = products;
+        let filteredProducts = db.products;
          
         if (filter) {
             const {onSale, avgRating} = filter
@@ -26,7 +26,7 @@ exports.Query =
             filteredProducts = filteredProducts.filter((product) => {
               let sumRating = 0;
               let numberOfReviews = 0;
-              reviews.forEach((review) => {
+              db.reviews.forEach((review) => {
                 if (review.productId === product.id) {
                   sumRating += review.rating;
                   numberOfReviews++; 
@@ -36,12 +36,12 @@ exports.Query =
               //console.log(sumRating , numberOfReviews , product.name)
 
               const avgProductRating = sumRating/numberOfReviews;
-
+              console.log(filteredProducts)
               //console.log("This is the avg product rating : " , avgProductRating)
                
               return avgProductRating >= avgRating;
 
-               
+              
             });
           }
         }
@@ -58,11 +58,11 @@ exports.Query =
 
 //based on the context/scope of this function, we are looking to return the productId based on the ID field for the table products. Then compairing the 
 
-    product: (parent,{id},{products}) => {return  products.find((product) => product.id === id)},
+    product: (parent,{id},{db}) => {return  db.products.find((product) => product.id === id)},
 
-    categories: (parent,args,{categories} ) => categories,
+    categories: (parent,args,{db} ) => db.categories,
 
     //destructure JSON 
-    category: (parent,{id},{categories})  => { return categories.find((category) => category.id === id)},
+    category: (parent,{id},{db})  => { return db.categories.find((category) => category.id === id)},
 
   };

@@ -1,12 +1,9 @@
  
  // Relating Data example via products in each catagory
-
-const { reviews, categories } = require("../db/db");
-
  
  exports.Category = {
-    products:({id: categoryId}, {filter} , {products}) => {
-       const categoryProducts =  products.filter((product) => product.categoryId === categoryId) 
+    products:({id: categoryId}, {filter} , {db}) => {
+       const categoryProducts =  db.products.filter((product) => product.categoryId === categoryId) 
 
        let filteredCategoryProducts = categoryProducts;
 
@@ -22,7 +19,7 @@ const { reviews, categories } = require("../db/db");
             filteredCategoryProducts = filteredCategoryProducts.filter((product) => {
                 let sumRating = 0;
                 numberOfReviews=0;
-                reviews.forEach((review) => {
+                db.reviews.forEach((review) => {
                     if (review.productId === product.id){
                         sumRating += review.rating;
                         numberOfReviews++;
