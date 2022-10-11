@@ -29,15 +29,15 @@ exports.Query =
               reviews.forEach((review) => {
                 if (review.productId === product.id) {
                   sumRating += review.rating;
-                  numberOfReviews++;
+                  numberOfReviews++; 
                 }
                 return sumRating , numberOfReviews;
               });
-              console.log(sumRating , numberOfReviews , product.name)
+              //console.log(sumRating , numberOfReviews , product.name)
 
               const avgProductRating = sumRating/numberOfReviews;
 
-              console.log("This is the avg product rating : " , avgProductRating)
+              //console.log("This is the avg product rating : " , avgProductRating)
                
               return avgProductRating >= avgRating;
 
