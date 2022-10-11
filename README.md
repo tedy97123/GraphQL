@@ -30,3 +30,4 @@ This set of essential operations is commonly referred to as CRUD.
 
 RESTful APIs most commonly utilize HTTP requests. Four of the most common HTTP methods in a REST environment are GET, POST, PUT, and DELETE, which are the methods by 
 which a developer can create a CRUD system.
+![index](https://user-images.githubusercontent.com/91521891/195148377-8d4450e4-4d90-4460-94f2-a28230cf67ea.png)
